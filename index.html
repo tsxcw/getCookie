@@ -1,0 +1,60 @@
+<!--
+ * @Author: tushan
+ * @Date: 2022-12-14 21:13:56
+ * @LastEditors: tushan
+ * @LastEditTime: 2022-12-15 13:41:53
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+  <link href="./styles.css" rel="stylesheet">
+  <title>getCookie</title>
+  <script src="./static/axios.js"></script>
+  <script src="./static/jquery.js"></script>
+</head>
+
+<body style="padding: 0px;margin:0px">
+  <div class="controller">
+    <button id="getCookie">获取Cookie</button>
+    <button id="refresh">刷新页面</button>
+    <input type="text" id="url" placeholder="请输入跳转网址">
+    <button id="open">打开</button>
+    <button id="openboot">开启自动刷新并提交</button>
+    <button id="closeboot" >关闭自动刷新并提交</button>
+  </div>
+  <webview class="view" src="https://zhihu.com" preload="./all.js"></webview>
+  <script src="./renderer.js"></script>
+</body>
+<style>
+  .controller {
+    position: fixed;
+    height: 50px;
+    width: 100vw;
+    background-color: aliceblue;
+    padding: 0px 15px;
+  }
+
+  button,
+  input {
+    outline: none;
+    border: none;
+    background-color: firebrick;
+    padding: 10px 15px;
+    border-radius: 8px;
+    margin-top: 5px;
+    color: #fff;
+  }
+
+  .view {
+    position: absolute;
+    top: 50px;
+    width: 100vw;
+    height: calc(100vh - 50px);
+  }
+</style>
+
+</html>
