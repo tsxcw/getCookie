@@ -2,7 +2,7 @@
  * @Author: tushan
  * @Date: 2022-12-14 21:13:56
  * @LastEditors: tushan
- * @LastEditTime: 2022-12-15 18:30:37
+ * @LastEditTime: 2022-12-15 19:12:05
  * @Description: 
 -->
 <!DOCTYPE html>
@@ -19,12 +19,17 @@
 
 <body style="padding: 0px;margin:0px">
   <div class="controller">
-    <button id="getCookie">获取Cookie</button>
+    <button id="back">返回上一页</button>
+    <button id="qj">前进</button>
+    <button id="getCookie">单次获取Cookie并上传</button>
     <button id="refresh">刷新页面</button>
     <input type="text" id="url" placeholder="请输入跳转网址">
     <button id="open">打开</button>
+    <input type="number" id="pl" placeholder="刷新频率单位分钟" value="1">
     <button id="openboot">开启自动刷新并提交</button>
-    <button id="closeboot" >关闭自动刷新并提交</button>
+    <button id="closeboot">关闭自动刷新并提交</button>
+    <button id="reload">重启</button>
+    <button id="trem">打开终端</button>
   </div>
   <webview class="view" src="https://openai.com/" preload="./all.js"></webview>
   <script src="./renderer.js"></script>
@@ -47,6 +52,11 @@
     border-radius: 8px;
     margin-top: 5px;
     color: #fff;
+  }
+
+  button:hover {
+    opacity: 0.6;
+    background-color: rgb(0, 128, 255);
   }
 
   .view {
